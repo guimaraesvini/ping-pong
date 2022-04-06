@@ -15,24 +15,24 @@ body{
     overflow: hidden;
 }
 
-.paddle{
-    --postion: 50;
-
+.paddle {
+    --position: 50;
+  
     position: absolute;
     background-color: var(--foreground-color);
+    top: calc(var(--position) * 1vh);
+    transform: translateY(-50%);
     width: 1vh;
     height: 10vh;
-    top: calc(var(--postion) * 1vh);
-    transform: translateY(-50%);
-}
+  }
 
-.paddle.left{
+.paddle.left {
     left: 1vw;
-}
-
-.paddle.right{
+  }
+  
+  .paddle.right {
     right: 1vw;
-}
+  }
 
 .ball{
     --x: 50;
