@@ -18,6 +18,10 @@ body{
     font-family: 'Jost', sans-serif;
 }
 
+a{
+    cursor: pointer;
+}
+
 .paddle {
     --position: 50;
   
