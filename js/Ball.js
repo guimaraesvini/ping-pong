@@ -27,6 +27,7 @@ export default class Ball{
         return this.ballElem.getBoundingClientRect()
     }
 
+    // reset the ball position when one of the player get a score
     reset(){
         this.x = 50
         this.y = 50
@@ -41,12 +42,14 @@ export default class Ball{
         this.velocity = INITIAL_VELOCITY
     }
 
+    
     update(delta, paddleRects){
         this.x += this.direction.x * this.velocity * delta
         this.y += this.direction.y * this.velocity * delta
         this.velocity += VELOCITY_INCREASE * delta
         const rect = this.rect()
 
+        // when the ball hit the border it goes to a different direction
         if (rect.bottom >= window.innerHeight || rect.top <= 0){
             this.direction.y *= -1
         }

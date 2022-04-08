@@ -24,6 +24,8 @@ export default class Paddle{
         this.position = 50
     }
 
+
+    // computer paddle follows the ball
     update(delta, ballHeight){
         this.position += SPEED * delta * (ballHeight - this.position)
     }

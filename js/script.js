@@ -14,8 +14,8 @@ function update(time) {
         ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()])
         computerPaddle.update(delta, ball.y)
 
+        // change the background color
         const hue = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--hue"))
-
         document.documentElement.style.setProperty("--hue", hue + delta * 0.1)
 
         if (isLose()) handleLose()
@@ -30,6 +30,7 @@ function isLose(){
    return rect.right >= window.innerWidth || rect.left <= 0 
 }
 
+// add score to player or computer
 function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
@@ -41,6 +42,7 @@ function handleLose() {
   computerPaddle.reset()
 }
 
+// player paddle follows de mouse cursor
 document.addEventListener("mousemove", e => {
   playerPaddle.position = (e.y / window.innerHeight) * 100
 })
